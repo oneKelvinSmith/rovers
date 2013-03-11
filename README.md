@@ -1,6 +1,6 @@
 # Rovers
 
-## ThoughtWorks Problem: MARS ROVERS
+## ThoughtWorks Problem: Mars Rovers
 
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
 
@@ -10,7 +10,7 @@ In order to control a rover, NASA sends a simple string of letters. The possible
 
 Assume that the square directly North from (x, y) is (x, y+1).
 
-# INPUT:
+# Input:
 The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0.
 
 The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover's position, and the second line is a series of instructions telling the rover how to explore the plateau.
@@ -20,23 +20,31 @@ The position is made up of two integers and a letter separated by spaces, corres
 Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving.
 
 
-# OUTPUT:
+# Output:
 The output for each rover should be its final co-ordinates and heading.
 
-## INPUT AND OUTPUT
+## Input and Output
 
-# Test Input:
-5 5
-1 2 N
-LMLMLMLMM
-3 3 E
-MMRMMRMRRM
+### Test Input:
 
-# Expected Output:
-1 3 N
-5 1 E
+    5 5
+    1 2 N
+    LMLMLMLMM
+    3 3 E
+    MMRMMRMRRM
+
+### Expected Output:
+
+    1 3 N
+    5 1 E
+
+## Solution
 
 The Rovers gem contains that code I have written to solve the problem.
+
+# Assumptions
+
+* Rovers value their own existence and will not exceed the rectangular boundaries of the plateau.
 
 
 ## Installation
@@ -55,7 +63,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Contributing
 
