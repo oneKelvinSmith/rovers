@@ -42,7 +42,7 @@ The output for each rover should be its final co-ordinates and heading.
 
 The Rovers gem contains that code I have written to solve the problem.
 
-### Assumptions
+### Assumptions:
 
 * Rovers value their own existence and will not exceed the rectangular boundaries of the plateau.
 
