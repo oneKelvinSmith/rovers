@@ -6,10 +6,10 @@ require 'rovers/version'
 Gem::Specification.new do |spec|
   spec.name          = "rovers"
   spec.version       = Rovers::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["supakow2@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.authors       = ["Kelvin Smith"]
+  spec.email         = ["oneKelvinSmith@gmail.com"]
+  spec.description   = %q{ThoughtWorks Mars Rovers - Solution}
+  spec.summary       = %q{Solution to ThoughtWorks Problem of Mars Rovers mapping out a rectangular plateau}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -19,5 +19,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "rspec"
   spec.add_development_dependency "rake"
 end
