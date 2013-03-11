@@ -45,7 +45,8 @@ The Rovers gem contains that code I have written to solve the problem.
 ### Assumptions:
 
 * Rovers value their own existence and will not exceed the rectangular boundaries of the plateau.
-
+* No plateau on Mars has been found to exceed 100 units in length or breadth.
+* A plateau must be at least one unit in length and breadth. (Otherwise, it is not a plateau, it is a peak and the mars rovers are lost to the void. Alas.)
 
 ## Installation
 
