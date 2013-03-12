@@ -18,11 +18,6 @@ class Plateau
     @length = @breadth = UPPER_BOUND
   end
 
-  def initialize(length, breadth)
-    @length = bound(length, MIN_DISTANCE, UPPER_BOUND)
-    @breadth = bound(breadth, MIN_DISTANCE, UPPER_BOUND)
-  end
-
   def length=(value)
     @length = bound(value, MIN_DISTANCE, UPPER_BOUND)
   end

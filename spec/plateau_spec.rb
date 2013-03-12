@@ -2,7 +2,8 @@ require 'spec_helper'
 require 'plateau'
 
 describe Plateau do
-  before do
+  # call before each test to reinitialize the Plateau instance
+  before(:each) do
     @plateau = Plateau.instance
     @plateau.length = @plateau.breadth = 10
   end
@@ -38,8 +39,8 @@ describe Plateau do
   describe "when the length is negative" do
     before { @plateau.length = -1 }
     it { should be_valid }
-    it "should have the minimum breadth" do
-      @plateau.breadth.should == min_distance
+    it "should have the minimum length" do
+      @plateau.length.should == min_distance
     end
   end
 
@@ -58,7 +59,7 @@ describe Plateau do
     end
   end
 
-  describe "when y_coordinate is out of bounds" do
+  describe "when breadth is out of bounds" do
     before { @plateau.breadth = 999 }
     it "should be equal to the upper bound" do
       @plateau.breadth.should == upper_bound
