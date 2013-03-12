@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'plateau'
+require 'rovers/plateau'
 
 describe Plateau do
   # call before each test to reinitialize the Plateau instance

@@ -3,7 +3,7 @@
 class RoverCommand
 
   def read_input
-    File.open
+    file = File.open('spec/input.txt')
   end
 
   def set_plateau_size

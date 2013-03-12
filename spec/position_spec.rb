@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'position'
+require 'rovers/position'
 
 describe Position do
 
