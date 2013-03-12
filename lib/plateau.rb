@@ -15,7 +15,7 @@ class Plateau
   attr_reader :length, :breadth
 
   def initialize
-    @length = @breadth = UPPER_BOUND
+    @breadth = @length = UPPER_BOUND
   end
 
   def length=(value)

@@ -8,7 +8,7 @@ class Position
 
   def initialize(x_value, y_value)
     @x_coordinate = Plateau.instance.bound_by_breadth(x_value)
-    @y_coordinate = Plateau.instance.bound_by_breadth(y_value)
+    @y_coordinate = Plateau.instance.bound_by_length(y_value)
   end
 
   # custom setter method that ensures that the x coordinate is valid and in bounds

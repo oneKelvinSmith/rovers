@@ -8,10 +8,10 @@ A rover's position and location is represented by a combination of x and y co-or
 
 In order to control a rover, NASA sends a simple string of letters. The possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its current spot. 'M' means move forward one grid point, and maintain the same heading.
 
-Assume that the square directly North from (x, y) is (x, y+1).
+Assume that the square directly North from (x, y) is (x, y + 1).
 
 ### Input:
-The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0.
+The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be (0, 0).
 
 The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover's position, and the second line is a series of instructions telling the rover how to explore the plateau.
 
@@ -47,6 +47,7 @@ The Rovers gem contains that code I have written to solve the problem.
 * Rovers value their own existence and will not exceed the rectangular boundaries of the plateau.
 * No plateau on Mars has been found to exceed 100 units in length or breadth.
 * A plateau must be at least one unit in length and breadth. (Otherwise, it is not a plateau, it is a peak and the mars rovers are lost to the void. Alas.)
+* Rovers can share the same grid point. (Rover social interaction is encouraged, it can be lonely on Mars.)
 
 ## Installation
 
