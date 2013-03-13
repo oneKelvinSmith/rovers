@@ -2,18 +2,19 @@ require 'rovers/position'
 require 'cardinal/direction'
 
 class Rover
-  # access the constant direction Hash in Direction module
+  # access the constant direction Hash in Cardinal module via mixin
+  include Cardinal
 
   attr_accessor :position
   attr_reader :orientation
 
   def initialize(orientation, position)
-    @orientation = cardinal_direction(orientation)
+    @orientation = direction(orientation)
     @position = position
   end
 
   def orientation=(value)
-    @orientation = cardinal_direction(value)
+    @orientation = direction(value)
   end
 
   def turn_left
@@ -64,17 +65,10 @@ class Rover
   end
 
   def location
-    "#{Cardinal::DIRECTIONS[@orientation]} #{@position}"
+    "#{DIRECTIONS[@orientation]} #{@position}"
   end
 
   def valid?
-    Cardinal::DIRECTIONS.include?(@orientation) and @position.valid?
-  end
-
-  private
-  def cardinal_direction(value)
-    # rovers will align along the Martian magnetic if confused about
-    # their orientation. Mars has magnetic north (this may be a thumbsuck).
-    Cardinal::DIRECTIONS.include?(value) ? value : :north
+    DIRECTIONS.include?(@orientation) and @position.valid?
   end
 end
