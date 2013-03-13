@@ -65,7 +65,13 @@ Or install it yourself as:
 
 ## Usage
 
+Insert input data into `spec/fixtures/input.txt` (otherwise update the Pathname variabe in RoverCommand).
 
+run:
+
+    $ ruby rovers.rb
+
+Output data will be written to `spec/fixtures/output.txt`.
 
 ## Contributing
 

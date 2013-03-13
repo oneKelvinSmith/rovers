@@ -24,7 +24,7 @@ describe Plateau do
     before { @plateau.length = 0 }
     it { should be_valid }
     it "should have the minimum length" do
-      @plateau.length.should == min_distance
+      @plateau.length.should be min_distance
     end
   end
 
@@ -32,7 +32,7 @@ describe Plateau do
     before { @plateau.breadth = 0 }
     it { should be_valid }
     it "should have the minimum breadth" do
-      @plateau.breadth.should == min_distance
+      @plateau.breadth.should be min_distance
     end
   end
 
@@ -40,7 +40,7 @@ describe Plateau do
     before { @plateau.length = -1 }
     it { should be_valid }
     it "should have the minimum length" do
-      @plateau.length.should == min_distance
+      @plateau.length.should be min_distance
     end
   end
 
@@ -48,21 +48,21 @@ describe Plateau do
     before { @plateau.breadth = -1 }
     it { should be_valid }
     it "should have the minimum breadth" do
-      @plateau.breadth.should == min_distance
+      @plateau.breadth.should be min_distance
     end
   end
 
   describe "when the length is out of bounds" do
     before { @plateau.length = 999 }
     it "should be equal to the upper bound" do
-      @plateau.length.should == upper_bound
+      @plateau.length.should be upper_bound
     end
   end
 
   describe "when breadth is out of bounds" do
     before { @plateau.breadth = 999 }
     it "should be equal to the upper bound" do
-      @plateau.breadth.should == upper_bound
+      @plateau.breadth.should be upper_bound
     end
   end
 end
