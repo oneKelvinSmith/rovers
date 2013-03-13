@@ -1,5 +1,5 @@
-require 'rovers/rover'
-require 'cardinal/direction'
+require './rovers/rover'
+require './cardinal/direction'
 
 # command class that will read instructions from input file and
 # issue commands to the rovers
@@ -8,22 +8,25 @@ class RoverCommand
 
   ALAS = "Rovers have been lost to the void. Alas!"
 
+  # these accessors are to allow manual testing in pry or irb
   attr_accessor :input, :output, :command_lines, :rovers
 
   def initialize
-    working_dir = File.expand_path File.dirname(__FILE__)
-    @input = Pathname.new("#{working_dir}/../../spec/fixtures/input.txt")
-    @output = Pathname.new("#{working_dir}/../../spec/fixtures/output.txt")
+    command_dir = File.expand_path File.dirname(__FILE__)
+    @input = Pathname.new("#{command_dir}/../../spec/fixtures/input.txt")
+    @output = Pathname.new("#{command_dir}/../../spec/fixtures/output.txt")
     @rovers = {}
   end
 
   def read_input
+    # reverse the array because array.pop works from unexpected end
     @command_lines = @input.readlines.reverse if @input.exist?
     rescue
     puts ALAS
   end
 
-  def set_plateau_size
+  # must be called before #locate_rovers
+  def get_plateau_dimensions
     # get the size of the plateau from the first text line
     dimensions = next_line.split.map { |num| num.to_i }
     Plateau.instance.breadth = dimensions.first
@@ -36,7 +39,7 @@ class RoverCommand
       commands = next_line.split('').map
       # use the * (splat) operator to convert the array into a list of args
       @rovers.merge! link_to_rover(*location) => commands
-    end
+    end unless @command_lines.count.odd? # extra security 
   end
 
   def map_plateau

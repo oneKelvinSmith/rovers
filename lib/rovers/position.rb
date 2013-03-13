@@ -1,4 +1,4 @@
-require 'rovers/plateau'
+require './rovers/plateau'
 
 # The Position class is a simple container for an (x, y) coordinate.
 # A position is relative to a Plateau and is bounded by the width and breadth

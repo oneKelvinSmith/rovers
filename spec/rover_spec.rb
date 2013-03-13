@@ -3,6 +3,8 @@ require 'rovers/rover'
 
 describe Rover do
   before do
+    # reset the Plateau boundaries as instance will hold values
+    Plateau.instance.length = Plateau.instance.breadth = Plateau::UPPER_BOUND
     @position = Position.new(5, 5)
     @rover = Rover.new(:north, @position)
   end
@@ -132,12 +134,23 @@ describe Rover do
     end
 
     describe "when facing west" do
-      before do
-        @rover.orientation = :west
-      end
+      before { @rover.orientation = :west }
       it "should decrement the x_coordinate by 1" do
         @rover.move_forward
         @rover.position.x_coordinate.should be 4
+      end
+    end
+  end
+
+  describe "#location" do
+    it "should be equal to '5 5 N'" do
+      expect(@rover.location).to eq("5 5 N")
+    end
+    describe "orientation and position is :east and (1,4)" do
+      it "should be equal to '1 4 E'" do
+        @rover.orientation = :east
+        @rover.position = Position.new(1, 4)
+        expect(@rover.location).to eq("1 4 E")
       end
     end
   end
