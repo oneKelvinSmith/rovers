@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-require "./rovers/version"
+require_relative "rovers/version"
 
 module Rovers
-  require "./rovers/plateau"
-  require "./rovers/position"
-  require "./rovers/rover"
-  require "./rovers/rover_command"
-  require "./cardinal/direction"
+  require_relative "rovers/plateau"
+  require_relative "rovers/position"
+  require_relative "rovers/rover"
+  require_relative "rovers/rover_command"
+  require_relative "cardinal/direction"
 
   rover_command = RoverCommand.new
 

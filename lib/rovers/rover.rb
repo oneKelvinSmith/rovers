@@ -1,5 +1,5 @@
-require './rovers/position'
-require './cardinal/direction'
+require_relative 'position'
+require_relative '../cardinal/direction'
 
 class Rover
   # access the constant direction Hash in Cardinal module via mixin

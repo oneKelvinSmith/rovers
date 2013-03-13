@@ -1,5 +1,7 @@
-require './rovers/rover'
-require './cardinal/direction'
+require_relative 'rover'
+require_relative '../cardinal/direction'
+
+require 'pathname'
 
 # command class that will read instructions from input file and
 # issue commands to the rovers
