@@ -19,7 +19,6 @@ The position is made up of two integers and a letter separated by spaces, corres
 
 Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving.
 
-
 ### Output:
 The output for each rover should be its final co-ordinates and heading.
 
@@ -38,9 +37,10 @@ The output for each rover should be its final co-ordinates and heading.
     1 3 N
     5 1 E
 
+
 ## Solution
 
-The Rovers gem contains that code I have written to solve the problem.
+The Rovers gem contains that code I have written to solve the problem. The solution is written in ruby with all source files located in `lib/`.Testing is facilitated with RSpec and the tests are located in `spec/`.
 
 ### Assumptions:
 
@@ -48,6 +48,7 @@ The Rovers gem contains that code I have written to solve the problem.
 * No plateau on Mars has been found to exceed 100 units in length or breadth.
 * A plateau must be at least one unit in length and breadth. (Otherwise, it is not a plateau, it is a peak and the mars rovers are lost to the void. Alas.)
 * Rovers can share the same grid point. (Rover social interaction is encouraged, it can be lonely on Mars.)
+
 
 ## Installation
 
@@ -63,6 +64,7 @@ Or install it yourself as:
 
     $ gem install rovers
 
+
 ## Usage
 
 Insert input data into `spec/fixtures/input.txt` (otherwise update the Pathname variabe in RoverCommand).
@@ -72,6 +74,16 @@ run:
     $ ruby rovers.rb
 
 Output data will be written to `spec/fixtures/output.txt`.
+
+In order to verify that all tests are passing, run:
+
+    $ rake
+
+or,
+
+    $ rspec /spec
+
+
 
 ## Contributing
 
