@@ -51,6 +51,8 @@ class Rover
     @orientation = new_orientation
   end
 
+  # the rover's position will change my one unit in the
+  # direction it faces
   def move_forward
     case @orientation
       when :north
@@ -64,10 +66,12 @@ class Rover
     end
   end
 
+  # output the location in the format "x y N"
   def location
-    "#{DIRECTIONS[@orientation]} #{@position}"
+    "#{@position} #{DIRECTIONS[@orientation]}"
   end
 
+  # validation method for use in rspec tests
   def valid?
     DIRECTIONS.include?(@orientation) and @position.valid?
   end

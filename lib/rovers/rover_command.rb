@@ -48,12 +48,13 @@ class RoverCommand
   end
 
   def write_output
-    output_file = @output.open
-    rovers.each_key { |rover| rover}
+    output_file = @output.open('w') do |file|
+      rovers.each_key { |rover| file.puts rover.location }
+    end
   end
 
   private
-  def commnd_rover(rover, instruction)
+  def command_rover(rover, instruction)
     case instruction
     when 'M'
       rover.move_forward
